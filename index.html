@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia">
     <title>Assignment 3: Responsive Website</title>
     <style>
         /* default styles for all screen sizes */
@@ -80,13 +81,14 @@
         }
 
         .text1::after {
-            content: " Read More";
-            font-weight: bold;
+            content: ".";
+            
         }
 
         .text1 {
             font-size: 16px;
             margin: 12px;
+            font-family: "Georgia", serif;
         }
 
 
@@ -152,6 +154,10 @@
         .p1 {
             margin-top: 35px;
         }
+
+        #more {
+            display: none;
+        }
     </style>
 </head>
 
@@ -185,20 +191,44 @@
 
     <h1 class="text2">Admission Links:</h1>
     <ul>
-        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for MCA</a></li>
-        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for MBA</a></li>
-        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for M.Com</a></li>
-        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for other Courses</a></li>
+        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for MCA</a>
+        </li>
+        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for MBA</a>
+        </li>
+        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for M.Com</a>
+        </li>
+        <li><a href="https://www.unigoa.ac.in/systems/c/admissions/announcementsnotices.html">Click here for other
+                Courses</a></li>
     </ul>
     <h1 style="margin: 12px;">Disclaimer:</h1>
     <p class="text1">The information provided on this college admission website is for general informational
         purposes only. While we strive to provide accurate and up-to-date information, we make no representations or
         warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or
-        availability with respect to the website or the information, products, services, or related graphics contained
+        availability with respect to the website or the information, produ<span id="dots">..</span><span id="more">cts, services, or related graphics contained
         on the website for any purpose. Any reliance you place on such information is therefore strictly at your own
         risk. In no event will we be liable for any loss or damage including without limitation, indirect or
         consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out
-        of, or in connection with, the use of this website.</p>
+        of, or in connection with, the use of this website</span></p>
+
+    <button onclick="myFunction()" id="myBtn">Read more</button>
+
+    <script>
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+        
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more"; 
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less"; 
+            moreText.style.display = "inline";
+          }
+        }
+        </script>
 
 </body>
 
